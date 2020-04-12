@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%} base {%endblock%}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="{%url 'blog:PostList'%}">My blog</a>
+        <form class="form-inline my-2 my-lg-0">
+            <a href="{%url 'blog:PostSearch'%}" class="btn btn-outline-success my-2 my-sm-0">Search</a>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    {%block body%}
+    {%endblock%}
+</div>
+<div class="footer mt-4" >
+    <div class="container">
+        <a href="{%url 'blog:PostsFeed'%}" ><span class="text-center">Subscribe to my RSS feed</span></a>
+    </div>
+</div>
+</body>
+</html>

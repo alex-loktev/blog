@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block title%}Share{%endblock%}
+
+{%block body%}
+{% if sent %}
+<h1 class="mt-3">E-mail successfully sent</h1>
+<p>"{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.</p>
+{% else %}
+<form action="." method="post">
+    {%csrf_token%}
+    {%for field in form%}
+    <p>{{field.label_tag}}</p>
+    <p>{{field}}</p>
+    {%endfor%}
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+{%endif%}
+{%endblock%}
